@@ -1,5 +1,5 @@
  source 'https://rubygems.org/'
-# source 'http://ruby.taobao.org/'
+ # source 'http://ruby.taobao.org/'
 ruby '2.0.0'
 
 gem 'rails','4.0.0'
@@ -35,6 +35,7 @@ end
 
 group :production do
 	gem 'pg','0.15.1'
-	# to make css work
 	gem 'rails_12factor'
+	# gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+	# gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
