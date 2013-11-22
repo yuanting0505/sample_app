@@ -1,5 +1,5 @@
- source 'https://rubygems.org/'
- # source 'http://ruby.taobao.org/'
+ # source 'https://rubygems.org/'
+ source 'http://ruby.taobao.org/'
 ruby '2.0.0'
 
 gem 'rails','4.0.0'
@@ -21,7 +21,9 @@ end
 group :test do
 	gem 'selenium-webdriver','2.35.1'
 	gem 'capybara','2.1.0'
-	gem 'libnotify','0.8.0'
+	# gem 'libnotify','0.8.0'
+	gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+	gem 'growl' if /darwin/ =~ RUBY_PLATFORM
 	gem 'factory_girl_rails','4.2.1'
 end
 
