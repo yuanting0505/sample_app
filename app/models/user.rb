@@ -20,9 +20,11 @@ class User < ActiveRecord::Base
     before_create :create_remember_token
 
     def feed
-        Micropost.where("user_id=?",id)
+        Micropost.from_users_followed_by(self)
     end
+    
 
+    
     def User.new_remember_token
     	SecureRandom.urlsafe_base64
     end
@@ -49,4 +51,6 @@ class User < ActiveRecord::Base
     def create_remember_token
     	self.remember_token=User.encrypt(User.new_remember_token)
     end
+
+
 end
